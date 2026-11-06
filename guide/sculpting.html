@@ -7,14 +7,14 @@
   <meta name="description" content="This chapter covers everything that happens when you drag a brush across a model: the built-in brushes and the custom brushes that ship with SculptForge, brush size and strength, modifier keys, stroke types, alphas, symmetry and pen pressure. To design your own brushes, see Brush Lab and sharing bru">
   <meta name="theme-color" content="#111114">
   <meta name="color-scheme" content="dark">
-  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg?v=2">
-  <link rel="icon" type="image/png" href="../img/favicon-64.png?v=2">
-  <link rel="apple-touch-icon" href="../img/icon-256.png?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png?v=5">
+  <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon-64.png?v=5">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=5">
   <link rel="canonical" href="https://sculptforge.app/guide/sculpting.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Sculpting and brushes - SculptForge User Guide">
   <meta property="og:description" content="This chapter covers everything that happens when you drag a brush across a model: the built-in brushes and the custom brushes that ship with SculptForge, brush size and strength, modifier keys, stroke types, alphas, symmetry and pen pressure. To design your own brushes, see Brush Lab and sharing bru">
-  <meta property="og:image" content="https://sculptforge.app/img/social-preview.png?v=4">
+  <meta property="og:image" content="https://sculptforge.app/img/social-preview.png?v=5">
   <meta property="og:url" content="https://sculptforge.app/guide/sculpting.html">
   <link rel="stylesheet" href="../style.css?v=19">
   <script src="../motion.js?v=11" defer></script>
@@ -25,7 +25,7 @@
   <div class="scroll-progress" aria-hidden="true"></div>
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="../index.html"><img src="../img/logo.svg?v=2" alt="" width="34" height="34"><span>SculptForge</span></a>
+      <a class="brand" href="../index.html"><svg class="sf-mark" viewBox="0 0 56 56" width="34" height="34" aria-hidden="true" focusable="false"><rect x="1" y="1" width="54" height="54" rx="13" fill="#f28c3c"/><path fill="#141416" d="M25.57 25.34V25.67H19.77V25.56Q19.77 24.72 19.16 24.16Q18.54 23.6 17.28 23.6Q16.05 23.6 15.39 23.96Q14.73 24.33 14.73 24.86Q14.73 25.62 15.63 25.98Q16.52 26.34 18.51 26.74Q20.84 27.21 22.33 27.73Q23.83 28.25 24.95 29.42Q26.07 30.6 26.1 32.62Q26.1 36.03 23.79 37.68Q21.48 39.34 17.62 39.34Q13.11 39.34 10.6 37.82Q8.1 36.31 8.1 32.48H13.95Q13.95 33.93 14.7 34.42Q15.46 34.91 17.06 34.91Q18.23 34.91 19 34.66Q19.77 34.41 19.77 33.62Q19.77 32.92 18.92 32.57Q18.06 32.22 16.13 31.83Q13.78 31.33 12.24 30.78Q10.7 30.24 9.55 28.98Q8.4 27.72 8.4 25.56Q8.4 22.4 10.85 20.9Q13.3 19.4 17.06 19.4Q20.75 19.4 23.13 20.9Q25.51 22.4 25.57 25.34Z"/><path fill="#ffffff" d="M31.73 19.74H47.3V24.36H37.92V27.66H45.99V32.08H37.92V39H31.73Z"/></svg><span>SculptForge</span></a>
       <nav aria-label="Main">
         <a href="../index.html#features">Features</a>
         <a href="../index.html#demos">Demos</a>
@@ -53,7 +53,7 @@
       <article class="guide-article">
 <h1 id="sculpting-and-brushes">Sculpting and brushes</h1>
 <p>This chapter covers everything that happens when you drag a brush across a model: the built-in brushes and the custom brushes that ship with SculptForge, brush size and strength, modifier keys, stroke types, alphas, symmetry and pen pressure. To design your own brushes, see <a href="brush-lab.html">Brush Lab and sharing brushes</a>.</p>
-
+<figure class="shot"><a href="images/sculpt-lion.jpg" class="zoom"><img src="images/sculpt-lion.jpg" alt="Sculpting the lion head with X symmetry" width="1100" height="660" loading="lazy" decoding="async"></a><figcaption>Sculpting the lion head with X symmetry</figcaption></figure>
 <h2 id="your-first-stroke">Your first stroke<a class="anchor" href="#your-first-stroke" aria-label="Link to this section">#</a></h2>
 <ol>
 <li>
@@ -161,7 +161,7 @@ Press the letter on the badge to pick that brush. For example <kbd>B</kbd>, <kbd
 <h3 id="smooth-face-group-borders">Smooth face group borders<a class="anchor" href="#smooth-face-group-borders" aria-label="Link to this section">#</a></h3>
 <p><strong>Smooth face group borders only</strong> in <strong>Sculpt &gt; Brush</strong> turns Smooth (and <kbd>Shift</kbd>) into a border straightener: only the points on a border between <a href="face-groups.html">face groups</a> move, each along the surface toward its neighbours on the border, so a jagged edge (a cuff, a collar, the hem of a shirt, a panel line) becomes a clean line while the rest of the model stays where it is. Corners where three or more groups meet stay put. Group the clothing first (for example <strong>Group from Mask</strong> after masking it), then brush over the edge. Saved with the project (#81).</p>
 <p>On a micro level (see <a href="micro-levels.html">Micro levels</a>) Smooth is always the plain one for now. On a quad mesh (after Quad Remesh, or an imported quad model) Smooth follows the quads&#x27; own edges, never their diagonals, so the quads keep their shape (#69).</p>
-
+<figure class="shot"><a href="images/draw-palette.jpg" class="zoom"><img src="images/draw-palette.jpg" alt="Sculpt &gt; Draw &amp; Tablet" width="630" height="600" loading="lazy" decoding="async"></a><figcaption>Sculpt &gt; Draw &amp; Tablet</figcaption></figure>
 <h2 id="sculpt-paint-add-sub-rgb-and-front">Sculpt, Paint, Add, Sub, Rgb and Front<a class="anchor" href="#sculpt-paint-add-sub-rgb-and-front" aria-label="Link to this section">#</a></h2>
 <p>These toggles sit on the top shelf and in <strong>Sculpt &gt; Draw &amp; Tablet</strong>:</p>
 <div class="table-wrap"><table><thead><tr><th>Control</th><th>What it does</th></tr></thead><tbody><tr><td><strong>Sculpt</strong> / <strong>Paint</strong></td><td><strong>Sculpt</strong> makes brushes change the shape. <strong>Paint</strong> (<kbd>P</kbd>) paints colour only.</td></tr><tr><td><strong>Add</strong> / <strong>Sub</strong></td><td><strong>Add</strong> makes brushes add (the default), <strong>Sub</strong> makes them subtract. <kbd>Alt</kbd> flips the current choice for one stroke.</td></tr><tr><td><strong>Rgb</strong></td><td>Sculpt brushes also paint the current colour as they sculpt.</td></tr><tr><td><strong>Front</strong></td><td>Front faces only: brushes leave the far side of thin parts alone, such as the back of an ear or a cape.</td></tr></tbody></table></div>
@@ -278,10 +278,10 @@ Turn on <strong>Invert loaded image</strong> <em>before</em> loading if your ima
 <h3 id="alpha-options">Alpha options<a class="anchor" href="#alpha-options" aria-label="Link to this section">#</a></h3>
 <p>Under the preview in <strong>Sculpt &gt; Alpha</strong>:</p>
 <div class="table-wrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody><tr><td><strong>Follow stroke direction</strong></td><td>The alpha turns with the stroke, its top pointing the way you draw: scales, stitches and hair line up along the stroke. Small wobbles are smoothed out, as with Blender&#x27;s Rake: the direction is taken again each time the cursor has gone 20 pixels.</td></tr><tr><td><strong>Angle</strong></td><td>Turns the alpha by a fixed angle (-180 to 180 degrees, counter-clockwise), on its own or on top of the stroke&#x27;s direction.</td></tr><tr><td><strong>Angle jitter</strong></td><td>Turns each dab by a random angle, up to this many degrees either way, to break up repeats.</td></tr><tr><td><strong>Tile across</strong> / <strong>Tile down</strong></td><td>Repeats the alpha 1 to 8 times across and down inside the brush; the preview shows the result.</td></tr></tbody></table></div>
-<p>They work with every brush, custom and Community brushes included, and each brush keeps its own (see <a href="#each-brush-keeps-its-own-settings">Each brush keeps its own settings</a>). From a script: <code>brush_alpha_options follow_stroke=true angle=30 angle_jitter=10 tile_x=2 tile_y=2</code>.</p>
+<p>They work with every brush, custom and Community brushes included, and each brush keeps its own (see <a href="#each-brush-keeps-its-own-settings">Each brush keeps its own settings</a>). <strong>Save Brush Settings</strong> on a custom brush also writes Follow stroke direction, Angle and Angle jitter into its brush file, so a brush you share (a brush code, a .sfpack) turns its alpha the same way for everyone. Vector displacement stamps have the same options: see <a href="#stamp-rotation">Stamp rotation</a>. From a script: <code>brush_alpha_options follow_stroke=true angle=30 angle_jitter=10 tile_x=2 tile_y=2</code>.</p>
 <h2 id="vector-displacement-brushes">Vector displacement brushes<a class="anchor" href="#vector-displacement-brushes" aria-label="Link to this section">#</a></h2>
 <p>A vector displacement brush stamps a whole 3D shape in one click: a horn, an ear, a cluster of scales, a nostril. An alpha can only push the surface up or down; a vector displacement map (VDM) moves every point of the stamp in any direction, so the shape can lean over, curl and overhang, as nothing made with a height ever can.</p>
-
+<figure class="shot"><a href="images/vdm-brushes.jpg" class="zoom"><img src="images/vdm-brushes.jpg" alt="Horns, an ear curl, scales and two nostrils, one stamp each, and Sculpt &gt; Brush &gt; Vector Displacement" width="960" height="679" loading="lazy" decoding="async"></a><figcaption>Horns, an ear curl, scales and two nostrils, one stamp each, and Sculpt &gt; Brush &gt; Vector Displacement</figcaption></figure>
 <h3 id="stamp-a-vdm">Stamp a VDM<a class="anchor" href="#stamp-a-vdm" aria-label="Link to this section">#</a></h3>
 <ol>
 <li>
@@ -308,6 +308,10 @@ Click on the model where the stamp should sit and drag: the drag&#x27;s length s
 The <strong>Dots</strong> stroke works too: each dab adds the shape again, for rows of studs or scales.
 </li>
 </ul>
+<h3 id="stamp-rotation">Stamp rotation<a class="anchor" href="#stamp-rotation" aria-label="Link to this section">#</a></h3>
+<p>While the VDM brush is the brush, <strong>Stamp rotation</strong> sits under the map&#x27;s preview, with the same three options as <a href="#alpha-options">Alpha options</a>:</p>
+<div class="table-wrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody><tr><td><strong>Follow stroke direction</strong></td><td>On (the default): Drag Stamp turns the stamp with the drag, and a Dots stroke turns it along the stroke. Off: the drag only sets the size, and every stamp keeps Angle&#x27;s turn (horns that all stand the same way however you drag).</td></tr><tr><td><strong>Angle</strong></td><td>A fixed turn, -180 to 180 degrees counter-clockwise, on its own or on top of the drag&#x27;s direction. Slide Stamp takes it too (it slides the stamp without turning it).</td></tr><tr><td><strong>Angle jitter</strong></td><td>Each stamp turns by a random angle, up to this many degrees either way: scattered horns, rivets or scales that don&#x27;t all face the same way.</td></tr></tbody></table></div>
+<p>The VDM brush keeps its own, separate from the alpha brushes&#x27;; <strong>Save Brush Settings</strong> keeps them for next time, and a custom brush saves them in its brush file, so they travel in brush codes and <a href="packs-and-macros.html">packs</a>. From a script: <code>brush_alpha_options follow_stroke=false angle=45 angle_jitter=20</code>.</p>
 <aside class="callout callout-tip"><p><strong>Tip:</strong> a VDM moves points sideways, so it needs points to move: on a coarse mesh the shape breaks up into spikes. Divide first (the model above has 330 000 triangles), and stamp at the highest <a href="subdivision-levels.html">subdivision level</a>; stepping down and back up keeps the stamp. Use Front faces only on thin parts so the stamp doesn&#x27;t reach through to the other side.</p></aside>
 <h3 id="make-your-own-vdm">Make your own VDM<a class="anchor" href="#make-your-own-vdm" aria-label="Link to this section">#</a></h3>
 <ol>
@@ -491,7 +495,7 @@ the eraser end (default <strong>Invert</strong>, like holding <kbd>Alt</kbd>) an
   <footer class="footer">
     <div class="wrap footer-grid">
       <div>
-        <a class="brand" href="../index.html"><img src="../img/logo.svg?v=2" alt="" width="28" height="28"><span>SculptForge</span></a>
+        <a class="brand" href="../index.html"><svg class="sf-mark" viewBox="0 0 56 56" width="28" height="28" aria-hidden="true" focusable="false"><rect x="1" y="1" width="54" height="54" rx="13" fill="#f28c3c"/><path fill="#141416" d="M25.57 25.34V25.67H19.77V25.56Q19.77 24.72 19.16 24.16Q18.54 23.6 17.28 23.6Q16.05 23.6 15.39 23.96Q14.73 24.33 14.73 24.86Q14.73 25.62 15.63 25.98Q16.52 26.34 18.51 26.74Q20.84 27.21 22.33 27.73Q23.83 28.25 24.95 29.42Q26.07 30.6 26.1 32.62Q26.1 36.03 23.79 37.68Q21.48 39.34 17.62 39.34Q13.11 39.34 10.6 37.82Q8.1 36.31 8.1 32.48H13.95Q13.95 33.93 14.7 34.42Q15.46 34.91 17.06 34.91Q18.23 34.91 19 34.66Q19.77 34.41 19.77 33.62Q19.77 32.92 18.92 32.57Q18.06 32.22 16.13 31.83Q13.78 31.33 12.24 30.78Q10.7 30.24 9.55 28.98Q8.4 27.72 8.4 25.56Q8.4 22.4 10.85 20.9Q13.3 19.4 17.06 19.4Q20.75 19.4 23.13 20.9Q25.51 22.4 25.57 25.34Z"/><path fill="#ffffff" d="M31.73 19.74H47.3V24.36H37.92V27.66H45.99V32.08H37.92V39H31.73Z"/></svg><span>SculptForge</span></a>
         <p class="fine">Copyright © 2026 The SculptForge contributors.<br>The SculptForge User Guide is part of
           SculptForge, licensed under the <a href="https://github.com/islandmed/SculptForge/blob/main/LICENSE">GNU GPL v3.0 or later</a>.</p>
       </div>
