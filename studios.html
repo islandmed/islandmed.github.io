@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SculptForge for Studios</title>
+  <meta name="description" content="SculptForge is free for any number of artists: no seats, no licence server, no accounts. It fits studio pipelines with Blender, Maya and Unreal bridges, the Bridge exchange, USD/FBX/glTF and VFX Reference Platform builds.">
+  <meta name="theme-color" content="#111114" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f5f3" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png?v=5">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/favicon-64.png?v=5">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=5">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SculptForge for Studios: 20 artists, $0 in licenses">
+  <meta property="og:description" content="A free, open-source sculpting app for any number of artists, built to fit studio pipelines.">
+  <meta property="og:image" content="https://sculptforge.app/img/social-preview.png?v=5">
+  <meta property="og:url" content="https://sculptforge.app/studios.html">
+  <link rel="canonical" href="https://sculptforge.app/studios.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css?v=19">
+  <style>
+    /* Same language as the Support page: a calm stage (words, a warm glow, a faint grid) with cards rising onto it.
+       It follows the system's light or dark setting like the rest of the page. */
+    .studio-page { --card-bg: rgba(19, 19, 23, 0.9); --card-border: rgba(255, 255, 255, 0.09); --card-text: #a9a9b2;
+                   --card-title: #fff; --card-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+                   --bar-them: #6c6c76; --bar-them-soft: rgba(108, 108, 118, 0.38); --bar-us: #f6994d; --track: rgba(255, 255, 255, 0.06); }
+    .stage { --grid: rgba(255, 255, 255, 0.035); position: relative; isolation: isolate; overflow: hidden; background: #0c0c0f; color: #ececf1;
+             min-height: min(70vh, 680px); display: flex; align-items: flex-start; padding: 64px 0 230px; }
+    .stage-art { position: absolute; inset: -3%; z-index: -2; transform: translate3d(var(--px, 0px), var(--py, 0px), 0) scale(1.03);
+                 transition: transform 0.6s cubic-bezier(.2, .7, .2, 1); animation: stage-in 1.6s cubic-bezier(.2, .7, .2, 1) both; }
+    .stage-art { background: radial-gradient(46% 62% at 50% 0%, rgba(242, 140, 60, 0.20), transparent 72%),
+                             radial-gradient(30% 40% at 12% 100%, rgba(255, 176, 106, 0.05), transparent 70%),
+                             radial-gradient(30% 40% at 88% 100%, rgba(255, 176, 106, 0.05), transparent 70%); }
+    @keyframes stage-in { from { opacity: 0; scale: 1.05; } to { opacity: 1; scale: 1; } }
+    .stage::before { content: ""; position: absolute; inset: 0; z-index: -1;
+                     background: linear-gradient(180deg, rgba(15, 15, 18, 0) 55%, var(--bg) 100%); }
+    .stage::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+                    background: linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 56px 56px,
+                                linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 56px 56px;
+                    -webkit-mask-image: radial-gradient(62% 80% at 50% 0%, #000, transparent 78%);
+                    mask-image: radial-gradient(62% 80% at 50% 0%, #000, transparent 78%); }
+    .stage .wrap { width: 100%; }
+    .stage-copy { max-width: 780px; margin: 0 auto; text-align: center; animation: rise 0.8s cubic-bezier(.2, .7, .2, 1) both; }
+    .stage .eyebrow { letter-spacing: 0.22em; font-size: 0.78rem; color: #ffb06a; }
+    .stage h1 { font-size: clamp(2.5rem, 5.4vw, 4.2rem); line-height: 1.03; margin: 0.3em 0 0.4em; color: #fff; letter-spacing: -0.01em; text-wrap: balance; }
+    .stage h1 .accent { display: block; color: #ffb06a; }
+    .stage .lede { color: #cfcfd6; margin: 0 auto 26px; max-width: 36em; }
+    .stage-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .btn-hot { background: linear-gradient(180deg, #ffa95e, #e8782c); border-color: transparent; color: #1a0d04 !important;
+               box-shadow: 0 8px 26px rgba(240, 136, 46, 0.35); }
+    .btn-hot:hover { filter: brightness(1.07); text-decoration: none; }
+    .btn-ghost { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.24); color: #fff !important; }
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.11); text-decoration: none; }
+    .btn:focus-visible { outline: 2px solid #ffb06a; outline-offset: 3px; }
+
+    /* Cost cards on the stage */
+    .costs-wrap { position: relative; z-index: 1; margin-top: -180px; padding-bottom: 8px; }
+    .costs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 0; padding: 0; list-style: none; }
+    .cost { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 26px 24px 24px; border-radius: 18px;
+            background: var(--card-bg); border: 1px solid var(--card-border); box-shadow: var(--card-shadow);
+            -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+            animation: rise 0.7s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(0.15s + var(--i, 0) * 0.08s); }
+    .cost.featured { border: 1.5px solid #f6994d; box-shadow: 0 0 0 1px rgba(246, 153, 77, 0.25), 0 0 46px rgba(240, 136, 46, 0.26), var(--card-shadow);
+                     background: linear-gradient(180deg, rgba(42, 29, 18, 0.94), rgba(20, 18, 21, 0.94)); }
+    .cost h2 { margin: 0; font-size: 1.15rem; color: var(--card-title); }
+    .cost h2 span { color: var(--card-text); font-weight: 500; }
+    .cost .zero { margin: 0; color: var(--card-title); font-size: 2.7rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+    .cost .zero small { display: block; margin-top: 6px; color: var(--card-text); font-size: 0.9rem; font-weight: 500; letter-spacing: 0; }
+    .bars { display: grid; gap: 12px; margin: 4px 0 0; }
+    .bar-row { display: grid; gap: 5px; }
+    .bar-label { display: flex; justify-content: space-between; gap: 10px; font-size: 0.86rem; color: var(--card-text); }
+    .bar-label b { color: var(--card-title); font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .track { position: relative; height: 10px; border-radius: 4px; background: var(--track); overflow: hidden; }
+    .fill { position: absolute; inset: 0 auto 0 0; border-radius: 4px; transform-origin: left; animation: grow 1s cubic-bezier(.2, .7, .2, 1) 0.4s both; }
+    .fill.them-hi { background: repeating-linear-gradient(135deg, var(--bar-them-soft) 0 4px, transparent 4px 7px); }
+    .fill.them { background: var(--bar-them); }
+    .fill.us { background: var(--bar-us); }
+    @keyframes grow { from { transform: scaleX(0); } to { transform: none; } }
+    .cost-note { font-size: 0.82rem; color: var(--card-text); margin: auto 0 0; padding-top: 4px; }
+    .legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 18px 0 0; font-size: 0.85rem; color: var(--muted); }
+    .legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .legend i { display: inline-block; width: 22px; height: 10px; border-radius: 3px; }
+    .legend .k-them { background: var(--bar-them); }
+    .legend .k-them-hi { background: repeating-linear-gradient(135deg, var(--bar-them-soft) 0 4px, transparent 4px 7px); outline: 1px solid var(--bar-them-soft); }
+    .legend .k-us { background: var(--bar-us); }
+
+    /* The full table */
+    .table-scroll { overflow-x: auto; margin-top: 22px; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); }
+    table.costs-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; font-variant-numeric: tabular-nums; min-width: 600px; }
+    .costs-table caption { text-align: left; padding: 16px 18px 0; color: var(--muted); font-size: 0.85rem; caption-side: top; }
+    .costs-table th, .costs-table td { padding: 13px 18px; text-align: right; border-bottom: 1px solid var(--border); }
+    .costs-table th:first-child, .costs-table td:first-child { text-align: left; }
+    .costs-table thead th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; vertical-align: bottom; }
+    .costs-table tbody tr:last-child td, .costs-table tbody tr:last-child th { border-bottom: 0; }
+    .costs-table tbody th { font-weight: 600; }
+    .costs-table .us { color: var(--accent-2); font-weight: 600; }
+    .footnotes { margin-top: 16px; display: grid; gap: 6px; }
+    .footnotes p { margin: 0; }
+
+    /* Pipeline */
+    .pipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
+    .pipe-grid .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+    .pipe-grid .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .pipe-grid .card .tag { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; font-size: 0.7rem;
+                            font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; vertical-align: 2px;
+                            color: var(--accent-2); border: 1px solid currentColor; }
+    .pipe-more { margin-top: 20px; }
+    .nav nav a[aria-current="page"] { color: var(--text); }
+
+    /* Studio membership */
+    .member { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; padding: 34px;
+              border-radius: 20px; border: 1.5px solid #f6994d; background: linear-gradient(135deg, rgba(42, 29, 18, 0.9), var(--panel) 70%);
+              box-shadow: 0 0 46px rgba(240, 136, 46, 0.16); }
+    .member h2 { margin-top: 0; }
+    .member .price { margin: 0 0 6px; font-size: 3rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+    .member .price span { color: var(--muted); font-size: 1rem; font-weight: 500; letter-spacing: 0; margin-left: 6px; }
+    .member ul { margin: 0; padding-left: 1.1em; }
+    .member li { margin: 6px 0; }
+    .member .actions { display: grid; gap: 12px; }
+    .member .actions .btn { display: block; text-align: center; padding: 14px 20px; }
+    .member .actions p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .member .per-artist { margin: 0 0 14px; color: var(--muted); }
+    .faq { max-width: 760px; }
+    .faq h3 { margin: 22px 0 6px; font-size: 1.05rem; }
+    .faq p { margin: 0; color: var(--muted); }
+
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+    @media (max-width: 960px) {
+      .pipe-grid { grid-template-columns: repeat(2, 1fr); }
+      .member { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .stage { min-height: 0; padding: 48px 0 150px; }
+      .costs-wrap { margin-top: -110px; }
+      .costs { grid-template-columns: 1fr; gap: 18px; max-width: 540px; margin: 0 auto; }
+    }
+    @media (max-width: 620px) {
+      .stage { padding: 40px 0 36px; }
+      .costs-wrap { margin-top: 0; padding-top: 22px; }
+      .stage h1 { font-size: 2.55rem; }
+      .stage-copy { text-align: left; }
+      .stage .lede { display: block; font-size: 1rem; }
+      /* The table becomes one block per team size. */
+      .table-scroll { overflow: visible; }
+      table.costs-table { min-width: 0; }
+      .costs-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      .costs-table tbody, .costs-table tr, .costs-table td, .costs-table tbody th { display: block; }
+      .costs-table tbody tr { padding: 12px 18px; border-bottom: 1px solid var(--border); }
+      .costs-table tbody tr:last-child { border-bottom: 0; }
+      .costs-table tbody th { padding: 0 0 6px; border: 0; font-size: 1.05rem; }
+      .costs-table td { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; border: 0; text-align: right; }
+      .costs-table td { white-space: nowrap; }
+      .costs-table td::before { content: attr(data-label); flex: 1; min-width: 0; white-space: normal; color: var(--muted); text-align: left;
+                                font-size: 0.88rem; font-weight: 400; }
+      .stage-ctas .btn { flex: 1 1 100%; text-align: center; }
+      .pipe-grid { grid-template-columns: 1fr; }
+      .member { padding: 22px; }
+      .member .price { font-size: 2.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .stage-art, .stage-copy, .cost, .fill { animation: none; }
+      .stage-art { transition: none; }
+    }
+    /* Light: the stage, the cards and the page around them turn light. */
+    @media (prefers-color-scheme: light) {
+      :root { color-scheme: light; }
+      .studio-page { --bg: #f6f5f3; --bg-alt: #efede9; --panel: #ffffff; --border: #e2dfda; --text: #1c1c21; --muted: #5d5d66;
+                     --accent-2: #a84d14; --card-bg: rgba(255, 255, 255, 0.97); --card-border: #e2dfda; --card-text: #55555e;
+                     --card-title: #16161a; --card-shadow: 0 24px 50px rgba(20, 16, 12, 0.16);
+                     --bar-them: #8a8a93; --bar-them-soft: rgba(110, 110, 120, 0.45); --bar-us: #e2742a; --track: #efede9; }
+      .studio-page .nav { background: rgba(246, 245, 243, 0.86); }
+      .studio-page .nav nav a { color: #55555e; }
+      .studio-page .brand, .studio-page .nav nav a.gh { color: var(--text); }
+      .studio-page .nav nav a.nav-support { color: #b8561a; border-color: rgba(184, 86, 26, 0.5); }
+      .studio-page .nav nav a.nav-support:hover { color: #fff; background: #c8621f; }
+      .studio-page .nav-toggle span { background: var(--text); }
+      .studio-page .nav-menu a:hover { background: rgba(0, 0, 0, 0.05); }
+      .studio-page a { color: #a84d14; }
+      .studio-page .stage a:not(.btn) { color: #a84d14; }
+      .stage { --grid: rgba(60, 40, 20, 0.06); background: #f6f5f3; color: var(--text); }
+      .stage-art { background: radial-gradient(46% 62% at 50% 0%, rgba(242, 140, 60, 0.20), transparent 72%); }
+      .stage .accent { color: #c8621f; text-shadow: none; }
+      .stage h1 { color: #16161a; }
+      .stage .eyebrow { color: #b8561a; }
+      .stage .lede { color: #4d4d56; }
+      .stage .thanks { color: #3d3229; }
+      .studio-page code { background: #ebe8e3; }
+      .cost.featured { background: linear-gradient(180deg, #fff1e3, #ffffff 60%);
+                       box-shadow: 0 0 0 1px rgba(246, 153, 77, 0.25), 0 0 40px rgba(240, 136, 46, 0.2), var(--card-shadow); }
+      .member { background: linear-gradient(135deg, #fff1e3, #ffffff 70%); box-shadow: 0 18px 44px rgba(20, 16, 12, 0.1); }
+      .stage h1 .accent { color: #c8621f; }
+      .member .actions .btn-ghost, .stage .btn-ghost { background: #f4f2ef; border-color: #d8d4ce; color: var(--text) !important; }
+      .member .actions .btn-ghost:hover, .stage .btn-ghost:hover { background: #ebe7e1; border-color: #bdb7ae; }
+      .studio-page .card h3 { color: var(--text); }
+      .studio-page .nav nav a[aria-current="page"] { color: var(--text); }
+      .studio-page .footer { background: var(--bg-alt); }
+    }
+  </style>
+  <script src="motion.js?v=11" defer></script>
+  <script data-goatcounter="https://sculptforge.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body class="studio-page">
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><svg class="sf-mark" viewBox="0 0 56 56" width="34" height="34" aria-hidden="true" focusable="false"><rect x="1" y="1" width="54" height="54" rx="13" fill="#f28c3c"/><path fill="#141416" d="M25.57 25.34V25.67H19.77V25.56Q19.77 24.72 19.16 24.16Q18.54 23.6 17.28 23.6Q16.05 23.6 15.39 23.96Q14.73 24.33 14.73 24.86Q14.73 25.62 15.63 25.98Q16.52 26.34 18.51 26.74Q20.84 27.21 22.33 27.73Q23.83 28.25 24.95 29.42Q26.07 30.6 26.1 32.62Q26.1 36.03 23.79 37.68Q21.48 39.34 17.62 39.34Q13.11 39.34 10.6 37.82Q8.1 36.31 8.1 32.48H13.95Q13.95 33.93 14.7 34.42Q15.46 34.91 17.06 34.91Q18.23 34.91 19 34.66Q19.77 34.41 19.77 33.62Q19.77 32.92 18.92 32.57Q18.06 32.22 16.13 31.83Q13.78 31.33 12.24 30.78Q10.7 30.24 9.55 28.98Q8.4 27.72 8.4 25.56Q8.4 22.4 10.85 20.9Q13.3 19.4 17.06 19.4Q20.75 19.4 23.13 20.9Q25.51 22.4 25.57 25.34Z"/><path fill="#ffffff" d="M31.73 19.74H47.3V24.36H37.92V27.66H45.99V32.08H37.92V39H31.73Z"/></svg><span>SculptForge</span></a>
+      <nav aria-label="Main">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#demos">Demos</a>
+        <a href="brushes.html">Brushes</a>
+        <a href="guide/index.html">Guide</a>
+        <a href="studios.html" aria-current="page">Studios</a>
+        <a class="nav-support" href="support.html">Support</a>
+        <a class="nav-dl" href="index.html#download">Download</a>
+        <a class="gh" href="https://discord.gg/gWrYkEmQhH">Discord</a>
+        <a class="gh" href="https://github.com/islandmed/SculptForge">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="stage" aria-labelledby="studio-title">
+      <div class="stage-art" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="stage-copy">
+          <p class="eyebrow">SculptForge for studios</p>
+          <h1 id="studio-title">20 artists. <span class="accent">$0 in licenses.</span></h1>
+          <p class="lede">SculptForge is free and open source for any number of artists: no seats, no licence server,
+            no accounts and no telemetry. It runs on Linux, Windows and macOS, works offline, and talks to Blender,
+            Maya, Unreal and other sculpting apps.</p>
+          <div class="stage-ctas">
+            <a class="btn btn-hot" href="#membership">Your studio build</a>
+            <a class="btn btn-ghost" href="#pipeline">Pipeline details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="pipeline" aria-labelledby="pipeline-title">
+      <div class="wrap">
+        <p class="eyebrow">Pipeline</p>
+        <h2 id="pipeline-title">Built to drop into the pipeline you already run</h2>
+        <div class="pipe-grid">
+          <article class="card">
+            <h3>Blender add-on</h3>
+            <p>The SculptForge Bridge add-on for Blender 4.2+ sends selected objects to SculptForge and back, with
+              UVs, colours, mask and face sets.</p>
+          </article>
+          <article class="card">
+            <h3>Maya bridge <span class="tag">New</span></h3>
+            <p>A SculptForge shelf for Maya 2022+: send meshes, sculpt, send them back. Each object keeps its
+              transform, parent and shading groups, in one undo step. Early: reports from Maya users are welcome.</p>
+          </article>
+          <article class="card">
+            <h3>Bridge</h3>
+            <p>Exchanges Parts with another sculpting app through a shared bridge folder, with face groups, mask, vertex
+              paint and UVs.</p>
+          </article>
+          <article class="card">
+            <h3>Unreal Engine</h3>
+            <p>Send to Unreal pushes a sculpt into a running Unreal Editor 5.x: a static mesh with LODs, or a
+              skeletal mesh with a morph target per layer. Sending again updates the asset in place.</p>
+          </article>
+          <article class="card">
+            <h3>File formats</h3>
+            <p>OpenUSD (.usda, .usdz), FBX (reads any version, writes 7.4 binary), glTF / GLB, OBJ, PLY, STL and
+              Bridge files. Exports are checked with OpenUSD's usdchecker and the Khronos glTF validator.</p>
+          </article>
+          <article class="card">
+            <h3>Linux, Windows, macOS</h3>
+            <p>Native builds for all three, including .rpm for Fedora, RHEL, Rocky and Alma, .deb, AppImage,
+              ARM64, a Windows installer and a universal macOS app.</p>
+          </article>
+          <article class="card">
+            <h3>Linux pipelines</h3>
+            <p>Native Wayland and X11 from the same build: no XWayland, sharp on fractional and HiDPI scaling, pen
+              pressure on both. RHEL- and Rocky-friendly packages (.rpm, Flatpak, tar.gz) and no licence server.</p>
+          </article>
+          <article class="card">
+            <h3>VFX Reference Platform</h3>
+            <p>CY2026 and CY2027 builds (Rocky Linux 8 and 9, GCC 14, C++20, Python 3.13), tested in CI, plus a Rez
+              package. Dependencies are linked statically, so nothing conflicts with your other tools.</p>
+          </article>
+          <article class="card">
+            <h3>Scripting and the farm</h3>
+            <p>An <code>import sculptforge</code> Python module and <code>sculptforge-cli</code> run every editor
+              operation headless: imports, remeshing, LODs, exports and offscreen turntable renders.</p>
+          </article>
+          <article class="card">
+            <h3>No accounts, no telemetry, offline</h3>
+            <p>No sign-in, no licence server and nothing phones home. It works fully offline; AI features are
+              optional and talk only to the service you choose. Studio brush libraries can load from a read-only share.</p>
+          </article>
+        </div>
+        <p class="pipe-more">Licensing in plain terms: SculptForge is GPL-3.0-or-later. Use it on any number of
+          machines, commercially; your artwork is yours; and you can modify it in-house without publishing your
+          changes. The <a href="guide/studios.html">studio guide</a> covers deployment, Rez, brush libraries and the
+          Python API.</p>
+      </div>
+    </section>
+
+    <section class="section" id="membership" aria-labelledby="member-title">
+      <div class="wrap">
+        <div class="member">
+          <div>
+            <p class="eyebrow">Studio membership</p>
+            <h2 id="member-title">Your studio's own SculptForge build</h2>
+            <p class="price">$300<span>/ month</span></p>
+            <p class="per-artist">for up to 10 artists, then $25 a month for each extra artist</p>
+            <ul>
+              <li><strong>Your own build</strong>: your brushes, alphas, Lit Spheres, keymaps, macros, preferences, paths
+                and logo built in</li>
+              <li><strong>Isolated</strong>: a private release channel for your studio, and no outside connections by
+                default (no public update feed, no AI services, no Discord presence; SculptForge has no telemetry).
+                Updates come only from your channel or your internal mirror</li>
+              <li><strong>Pinned version</strong>: you choose when to move. Security fixes are backported to the
+                current release and one long-term support (LTS) line</li>
+              <li><strong>Offline signed installer</strong> with checksums for IT</li>
+              <li><strong>Support</strong>: a first response within 2 business days (a response, not a fix), up to 3 custom items a month, your requests first on the roadmap, and a private Discord channel</li>
+              <li>Everything in Member for each artist; invoiced monthly; cancel anytime</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <a class="btn btn-hot" href="mailto:hello@sculptforge.app?subject=SculptForge%20Studio%20membership">Start a Studio membership</a>
+            <a class="btn btn-ghost" href="https://buy.stripe.com/3cI00j12v5H4g1dgWZ4F204" rel="noopener">Founding Studio: $150 / month</a>
+            <p><strong>Founding Studio</strong>: the first 10 studios pay $150 a month for up to 10 artists, locked for
+              as long as they stay subscribed. Questions first: write to
+              <a href="mailto:hello@sculptforge.app">hello@sculptforge.app</a>.
+              <a href="guide/studios.html#your-studio-build">Your studio build</a> explains what to send. Payments go
+              through Stripe; cancel anytime in the customer portal. SculptForge releases stay free for everyone and
+              nothing in the app is paywalled. <a href="support.html">All memberships</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <p class="eyebrow">Studio questions</p>
+        <h2 id="faq-title">Plain answers</h2>
+        <div class="faq">
+          <h3>Is our build's code secret?</h3>
+          <p>No. SculptForge is GPL-3.0, and so is your build: its source comes with it and is yours to share if you
+            wish. There are no exclusive or secret features. What stays private is yours: your brushes, alphas,
+            settings and files, which never go into public builds or packs, and your network, which your build never
+            reaches out of.</p>
+          <h3>What does "no outside connections" cover?</h3>
+          <p>Your build opens no connection to the internet or your local network by default: no update check
+            against our website, no AI services, no community gallery, no Discord presence. Its only connection is to
+            your own release channel or internal mirror, plus anything you ask us to allow (for example your own
+            ComfyUI server).</p>
+          <h3>Which versions get security fixes?</h3>
+          <p>The current release and one LTS line. Your studio is always on one of those two; when an LTS line ends,
+            we help you move to the next one.</p>
+          <h3>What counts as a custom item?</h3>
+          <p>A brush, alpha, macro, keymap or pipeline preset, up to 3 a month. Bigger features are quoted
+            separately before any work starts.</p>
+          <h3>What if we have more than 10 artists?</h3>
+          <p>$25 a month for each extra artist. Every artist gets everything in Member.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand" href="index.html"><svg class="sf-mark" viewBox="0 0 56 56" width="28" height="28" aria-hidden="true" focusable="false"><rect x="1" y="1" width="54" height="54" rx="13" fill="#f28c3c"/><path fill="#141416" d="M25.57 25.34V25.67H19.77V25.56Q19.77 24.72 19.16 24.16Q18.54 23.6 17.28 23.6Q16.05 23.6 15.39 23.96Q14.73 24.33 14.73 24.86Q14.73 25.62 15.63 25.98Q16.52 26.34 18.51 26.74Q20.84 27.21 22.33 27.73Q23.83 28.25 24.95 29.42Q26.07 30.6 26.1 32.62Q26.1 36.03 23.79 37.68Q21.48 39.34 17.62 39.34Q13.11 39.34 10.6 37.82Q8.1 36.31 8.1 32.48H13.95Q13.95 33.93 14.7 34.42Q15.46 34.91 17.06 34.91Q18.23 34.91 19 34.66Q19.77 34.41 19.77 33.62Q19.77 32.92 18.92 32.57Q18.06 32.22 16.13 31.83Q13.78 31.33 12.24 30.78Q10.7 30.24 9.55 28.98Q8.4 27.72 8.4 25.56Q8.4 22.4 10.85 20.9Q13.3 19.4 17.06 19.4Q20.75 19.4 23.13 20.9Q25.51 22.4 25.57 25.34Z"/><path fill="#ffffff" d="M31.73 19.74H47.3V24.36H37.92V27.66H45.99V32.08H37.92V39H31.73Z"/></svg><span>SculptForge</span></a>
+        <p class="fine">Copyright © 2026 The SculptForge contributors. SculptForge is licensed under the
+          <a href="https://github.com/islandmed/SculptForge/blob/main/LICENSE">GNU GPL v3.0 or later</a>.</p>
+      </div>
+      <div class="links">
+        <a href="guide/index.html">User Guide</a>
+        <a href="guide/studios.html">Studio guide</a>
+        <a href="brushes.html">Community brushes</a>
+        <a href="benchmarks/">Benchmarks: 15M and 33M</a>
+        <a href="press.html">Press kit</a>
+        <a href="support.html">Membership</a>
+        <a href="supporters.html">Members</a>
+        <a href="https://github.com/islandmed/SculptForge">Source code</a>
+        <a href="https://discord.gg/gWrYkEmQhH">Community Discord</a>
+      </div>
+      <p class="fine trademarks">SculptForge is an independent project. Product names are trademarks of their respective owners. Names
+        are used only to describe compatibility and for price comparison. The site uses no cookies. Visits are
+        counted anonymously with <a href="https://www.goatcounter.com/">GoatCounter</a>.</p>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const stage = document.querySelector('.stage'), art = document.querySelector('.stage-art');
+      if (!stage || !art || matchMedia('(prefers-reduced-motion: reduce), (hover: none)').matches) return;
+      stage.addEventListener('pointermove', (e) => {
+        const r = stage.getBoundingClientRect();
+        art.style.setProperty('--px', `${((e.clientX - r.left) / r.width - 0.5) * -14}px`);
+        art.style.setProperty('--py', `${((e.clientY - r.top) / r.height - 0.5) * -10}px`);
+      });
+      stage.addEventListener('pointerleave', () => { art.style.setProperty('--px', '0px'); art.style.setProperty('--py', '0px'); });
+    })();
+  </script>
+</body>
+</html>
