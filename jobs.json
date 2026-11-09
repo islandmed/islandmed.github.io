@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-08",
+"generated": "2026-11-09",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -39,6 +39,22 @@
 "studios": 83,
 "roles": [
 {
+"id": "teamtailor:fatshark:2fd6bd15-00c1-4c81-b185-2d62736c71d4",
+"title": "Level Artist",
+"studio": "Fatshark",
+"location": "Stockholm, Sweden",
+"regions": [
+"Europe"
+],
+"remote": false,
+"posted": "2026-11-09",
+"url": "https://jobs.fatsharkgames.com/jobs/8690856-level-artist",
+"sector": "games",
+"role": "environment",
+"contract": false,
+"new": true
+},
+{
 "id": "greenhouse:naughtydog:6240876004",
 "title": "Senior Environment Artist Texture",
 "studio": "Naughty Dog",
@@ -52,7 +68,7 @@
 "sector": "games",
 "role": "environment",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "lever-eu:frontier:d81e0934-8f97-4f45-b89f-e6d7c3916b35",
@@ -68,7 +84,7 @@
 "sector": "games",
 "role": "character",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "lever:larian:dcff9fb6-ed96-4de5-adef-17fefcde584b",
@@ -84,7 +100,7 @@
 "sector": "games",
 "role": "character",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "lever:neowiz:7f78deae-10c8-44d7-b213-f32b971bb1af",
@@ -100,7 +116,7 @@
 "sector": "games",
 "role": "environment",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:sonyinteractiveentertainmentglobal:6237080004",
@@ -116,7 +132,7 @@
 "sector": "games",
 "role": "generalist",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:epicgames:6224462004",
@@ -132,7 +148,7 @@
 "sector": "games",
 "role": "character",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:epicgames:6224464004",
@@ -148,7 +164,7 @@
 "sector": "games",
 "role": "character",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:riotgames:7271195",
@@ -164,7 +180,7 @@
 "sector": "games",
 "role": "environment",
 "contract": true,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:riotgames:8282210",
@@ -180,7 +196,7 @@
 "sector": "games",
 "role": "character",
 "contract": true,
-"new": true
+"new": false
 },
 {
 "id": "lever:larian:55238820-92ef-4b4e-ba18-a9fdd027f737",
@@ -196,7 +212,7 @@
 "sector": "games",
 "role": "environment",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:riotgames:8279690",
@@ -212,7 +228,7 @@
 "sector": "games",
 "role": "character",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "lever:neowiz:f98e7602-7c88-4c01-b492-879e565685c7",
@@ -228,7 +244,7 @@
 "sector": "games",
 "role": "environment",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "ashby:voodoo:45169264-5113-4ec8-85df-435e845b8edd",
@@ -244,7 +260,7 @@
 "sector": "games",
 "role": "generalist",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "teamtailor:embarkstudios:00381e92-2f07-4dba-af30-f1f31dae1811",
@@ -260,7 +276,7 @@
 "sector": "games",
 "role": "generalist",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "ashby:voodoo:f8231db6-ec7c-47ad-86ae-7ba48b01f94e",
@@ -276,7 +292,7 @@
 "sector": "games",
 "role": "generalist",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "teamtailor:embarkstudios:97817fba-505e-487e-8fb5-cccf8de23aa7",
@@ -292,7 +308,7 @@
 "sector": "games",
 "role": "character",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:tripledotstudios:4973861101",
@@ -308,7 +324,7 @@
 "sector": "games",
 "role": "generalist",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:riotgames:8163170",
@@ -324,7 +340,7 @@
 "sector": "games",
 "role": "character",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "ashby:thatgamecompany:36e101a4-c7ba-4884-8999-cd04abb979ee",
@@ -340,7 +356,7 @@
 "sector": "games",
 "role": "character",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "ashby:supercell:8cb16c25-3e09-4245-96b0-6bab32186181",
@@ -356,7 +372,7 @@
 "sector": "games",
 "role": "environment",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "lever:jamcity:5162e400-e24f-47f1-9a64-51548812b74a",
@@ -372,7 +388,7 @@
 "sector": "games",
 "role": "generalist",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:2k:7812709003",
@@ -388,7 +404,7 @@
 "sector": "games",
 "role": "environment",
 "contract": false,
-"new": true
+"new": false
 }
 ]
 }
