@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-09",
+"generated": "2026-11-10",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -51,6 +51,22 @@
 "url": "https://jobs.fatsharkgames.com/jobs/8690856-level-artist",
 "sector": "games",
 "role": "environment",
+"contract": false,
+"new": false
+},
+{
+"id": "greenhouse:2k:8046872003",
+"title": "Senior 3D Artist",
+"studio": "2K",
+"location": "Lunenburg, Nova Scotia, Canada; Nova Scotia, Canada",
+"regions": [
+"North America"
+],
+"remote": false,
+"posted": "2026-11-09",
+"url": "https://job-boards.greenhouse.io/2k/jobs/8046872003",
+"sector": "games",
+"role": "generalist",
 "contract": false,
 "new": true
 },
