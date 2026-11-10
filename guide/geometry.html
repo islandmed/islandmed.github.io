@@ -16,7 +16,7 @@
   <meta property="og:description" content="These tools change the topology of the active Part: add resolution for detail, rebuild an even surface, reduce the triangle count, make it symmetric, or make a chain of levels of detail for a game engine. This chapter explains what each one does to your mesh and its attributes, and when to use it.">
   <meta property="og:image" content="https://sculptforge.app/img/social-preview.png?v=5">
   <meta property="og:url" content="https://sculptforge.app/guide/geometry.html">
-  <link rel="stylesheet" href="../style.css?v=19">
+  <link rel="stylesheet" href="../style.css?v=35">
   <script src="../motion.js?v=12" defer></script>
   <script data-goatcounter="https://sculptforge.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
   <script src="search-index.js?v=54" defer></script>
@@ -25,7 +25,7 @@
   <div class="scroll-progress" aria-hidden="true"></div>
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="../index.html"><img class="brand-mark" src="../img/bust-mark-44.png" srcset="../img/bust-mark-88.png 2x, ../img/bust-mark-132.png 3x" width="44" height="44" alt=""><span>SculptForge</span></a>
+      <a class="brand" href="../index.html"><img class="brand-wordmark" src="../img/logo-wordmark-dark.svg" width="137" height="32" alt="SculptForge"><img class="brand-cube" src="../img/logo-cube.svg" width="38" height="40" alt="SculptForge"></a>
       <nav aria-label="Main">
         <a href="../index.html#features">Features</a>
         <a href="../index.html#demos">Demos</a>
@@ -101,7 +101,24 @@ even out stretched triangles after heavy Move or Tendril work;
 clean up scans, splat conversions and AI-generated models before sculpting.
 </li>
 </ul>
-<p>The <strong>Resolution</strong> slider next to the button sets how many voxels span the longest side of the model (32 to 512, as the <code>remesh</code> command; default 200). Higher keeps more detail and makes more triangles. 512 is safe on an 8 GB computer: a 28M-triangle scan remeshes at 512 in about 8 s (14 s on 4 cores) into about 760,000 triangles; a round 2M-triangle sculpt, which fills its box, in about 3 s (5 s on 4 cores) into about 2.5 million triangles, with about 2 GB of memory at its peak.</p>
+<p>The <strong>Resolution</strong> slider next to the button sets how many voxels span the longest side of the model (32 to 4096, as the <code>remesh</code> command; default 200). Higher keeps more detail and makes more triangles, about four times as many for each doubling. Two thirds of the slider covers 32 to 512, the everyday range; the last third goes up to 2048 and then 4096 (Ctrl+click it to type a number). The line under it estimates the result, <em>About 1.6M triangles</em>, from the Part&#x27;s surface area (fine detail smaller than a voxel counts there, so a dense scan comes out somewhat lower).</p>
+<p>512 is safe on an 8 GB computer: a 28M-triangle scan remeshes at 512 in about 8 s (14 s on 4 cores) into about 760,000 triangles; a round 2M-triangle sculpt, which fills its box, in about 3 s (5 s on 4 cores) into about 2.5 million triangles, with about 2 GB of memory at its peak.</p>
+<p>Above 512 only the voxels near the surface are stored, so memory grows with the surface, not the volume: a sculpted head remeshes at 1024 into about 5.6 million triangles in about 3 s (5 s on 4 cores; 0.8 GB at its peak) and at 2048 into about 22 million in about 9 s (21 s on 4 cores; 3 GB). At 4096 the same head would be about 90 million triangles and needs over 16 GB, so on most computers it says so instead of starting. Above 512:</p>
+<ul>
+<li>
+the estimate line also shows the memory the remesh needs, in red when that is more than is free now;
+</li>
+<li>
+the first remesh asks once, with the estimate (<strong>Remesh</strong> or <strong>Cancel</strong>); it asks again after the Resolution has been back at 512 or less;
+</li>
+<li>
+a remesh that won&#x27;t fit in the free memory doesn&#x27;t start: the status line says how much it needs and how much is free. Lower the Resolution or close other apps;
+</li>
+<li>
+it runs in the background with a progress bar; <strong>Cancel</strong> stops it within seconds and the Part stays as it was.
+</li>
+</ul>
+<p>Sculpting tens of millions of triangles needs a fast computer: <strong>Decimate</strong> or a lower Resolution makes the result lighter.</p>
 <figure class="shot"><a href="images/remesh.jpg" class="zoom"><img src="images/remesh.jpg" alt="Wireframe of a model before and after a voxel remesh" width="900" height="437" loading="lazy" decoding="async"></a><figcaption>Wireframe of a model before and after a voxel remesh</figcaption></figure>
 <p>What happens to your data:</p>
 <ul>
@@ -193,8 +210,8 @@ One undo step. Subdivision levels are removed (undo restores them).
 </ul>
 <h2 id="find-problems">Find Problems<a class="anchor" href="#find-problems" aria-label="Link to this section">#</a></h2>
 <p><strong>Tool &gt; Geometry &gt; Find Problems</strong> looks for what makes a mesh hard to sculpt, remesh, 3D print or export. <strong>Check</strong> counts the problems; it changes nothing. Each problem found gets a row with its count and a <strong>Fix</strong> button that changes only what that row names, as one undo step.</p>
-<div class="table-wrap"><table><thead><tr><th>Row</th><th>What it is</th><th>What Fix does</th></tr></thead><tbody><tr><td><strong>Non-manifold edges</strong></td><td>Edges shared by three or more triangles (a fin, a wall inside the mesh)</td><td>Each triangle past the first two gets its own copy of the edge, so it comes loose; nothing is deleted</td></tr><tr><td><strong>Holes</strong></td><td>Open boundary loops</td><td>Caps each with a patch, as <a href="#fill-holes">Fill Holes</a> does</td></tr><tr><td><strong>Duplicate triangles</strong></td><td>Triangles on the same three points as another, either way round</td><td>Deletes the copies</td></tr><tr><td><strong>Degenerate triangles</strong></td><td>Triangles that use one point twice</td><td>Deletes them</td></tr><tr><td><strong>Zero-area triangles</strong></td><td>Three different points in one line (a sliver)</td><td>Collapses each one&#x27;s shortest edge</td></tr><tr><td><strong>Flipped triangles</strong></td><td>Triangles wound against their neighbours, or a closed piece that is inside out</td><td>Turns them to match the rest of their piece, and closed pieces right way out</td></tr><tr><td><strong>Isolated points</strong></td><td>Points no triangle uses</td><td>Removes them</td></tr></tbody></table></div>
-<p><strong>Fix all</strong> fixes every row except <strong>Holes</strong>, in one undo step: a mesh can be open on purpose (a cloth panel, a mask, a relief), so holes are only capped when you click their own <strong>Fix</strong>. After a fix the list checks again.</p>
+<div class="table-wrap"><table><thead><tr><th>Row</th><th>What it is</th><th>What Fix does</th></tr></thead><tbody><tr><td><strong>Non-manifold edges</strong></td><td>Edges shared by three or more triangles (a fin, a wall inside the mesh, two solids touching along an edge)</td><td>Pulls the edge apart; nothing is deleted. Solids that only touch come apart closed; a fin or wall comes loose, which leaves its edge open (a hole)</td></tr><tr><td><strong>Holes</strong></td><td>Open boundary loops</td><td>Caps each with a patch, as <a href="#fill-holes">Fill Holes</a> does. The edge of a loose fin or sheet isn&#x27;t capped (the cap would lie on it)</td></tr><tr><td><strong>Duplicate triangles</strong></td><td>Triangles on the same three points as another, either way round</td><td>Deletes the copies</td></tr><tr><td><strong>Degenerate triangles</strong></td><td>Triangles that use one point twice</td><td>Deletes them</td></tr><tr><td><strong>Zero-area triangles</strong></td><td>Three different points in one line (a sliver)</td><td>Collapses each one&#x27;s shortest edge</td></tr><tr><td><strong>Flipped triangles</strong></td><td>Triangles wound against their neighbours, or a closed piece that is inside out</td><td>Turns them to match the rest of their piece, and closed pieces right way out (a piece inside another, such as a hollow&#x27;s inner wall or an eye, keeps its way)</td></tr><tr><td><strong>Isolated points</strong></td><td>Points no triangle uses</td><td>Removes them</td></tr></tbody></table></div>
+<p><strong>Fix all</strong> fixes every row except <strong>Holes</strong>, in one undo step: a mesh can be open on purpose (a cloth panel, a mask, a relief), so holes are only capped when you click their own <strong>Fix</strong>. One fix can cause another (collapsing a sliver can leave a duplicate), so Fix all checks again and repeats until nothing but holes is left. After any fix the list checks again, and whatever is still there is explained under the rows (<strong>Not fixed:</strong>), with why.</p>
 <h2 id="lod-chains">LOD chains<a class="anchor" href="#lod-chains" aria-label="Link to this section">#</a></h2>
 <p>A level-of-detail chain is a series of lighter copies of the model for game engines: LOD0 is the full sculpt, and each level after it has a fixed fraction of the triangles of the one before.</p>
 <ol>
@@ -233,9 +250,8 @@ Click <strong>Generate LOD chain</strong>.
 </li>
 </ul>
 <h2 id="scripting">Scripting<a class="anchor" href="#scripting" aria-label="Link to this section">#</a></h2>
-<div class="table-wrap"><table><thead><tr><th>Command</th><th>Options</th></tr></thead><tbody><tr><td><code>subdivide</code></td><td><code>levels</code> 1-4 (default 1)</td></tr><tr><td><code>remesh</code></td><td><code>resolution</code> 32-512 voxels across the longest side (default 200); <code>keep_texture</code> (default true)</td></tr><tr><td><code>decimate</code></td><td><code>ratio</code> 0.01-1 of the triangles to keep (default 0.5), or <code>triangles</code> for an exact target</td></tr><tr><td><code>qremesh</code></td><td><code>target</code> quads (default 5000), <code>adaptive</code>, <code>keep_groups</code>, <code>detect_edges</code>, <code>use_vertexpaint</code>, <code>symmetry</code>, <code>keep_original</code>, <code>keep_texture</code>; see <a href="retopology.html#scripting">Quad retopology</a></td></tr><tr><td><code>close_holes</code></td><td><code>max_edges</code> closes only holes with at most that many boundary edges (default 0: all); <code>refine</code> (default true; false: as few triangles as possible); <code>new_group</code> (default true)</td></tr><tr><td><code>mirror_and_weld</code></td><td><code>axis</code> x, y, z or several, e.g. <code>xz</code> (default x); <code>side</code> positive (default) or negative</td></tr><tr><td><code>mirror</code></td><td><code>axis</code> (default x); <code>pivot</code> origin (default) or center</td></tr><tr><td><code>weld_points</code></td><td><code>distance</code> in scene units (0: only exactly coincident points); <code>preview=true</code> only counts them</td></tr><tr><td><code>mesh_check</code></td><td>Lists the problems, e.g. <code>holes=2 flipped=14</code></td></tr><tr><td><code>mesh_fix</code></td><td><code>issue</code> non_manifold, holes, duplicate, degenerate, zero_area, flipped, isolated or all (all but holes)</td></tr><tr><td><code>export_lods</code></td><td><code>path</code> (base name), <code>levels</code> 1-8 including LOD0 (default 4), <code>ratio</code> 0.1-0.9 (default 0.5)</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>Command</th><th>Options</th></tr></thead><tbody><tr><td><code>subdivide</code></td><td><code>levels</code> 1-4 (default 1)</td></tr><tr><td><code>remesh</code></td><td><code>resolution</code> 32-4096 voxels across the longest side (default 200; above 512 it stops with a message when it won&#x27;t fit in the free memory); <code>keep_texture</code> (default true)</td></tr><tr><td><code>decimate</code></td><td><code>ratio</code> 0.01-1 of the triangles to keep (default 0.5), or <code>triangles</code> for an exact target</td></tr><tr><td><code>qremesh</code></td><td><code>target</code> quads (default 5000), <code>adaptive</code>, <code>keep_groups</code>, <code>detect_edges</code>, <code>use_vertexpaint</code>, <code>symmetry</code>, <code>keep_original</code>, <code>keep_texture</code>; see <a href="retopology.html#scripting">Quad retopology</a></td></tr><tr><td><code>close_holes</code></td><td><code>max_edges</code> closes only holes with at most that many boundary edges (default 0: all); <code>refine</code> (default true; false: as few triangles as possible); <code>new_group</code> (default true)</td></tr><tr><td><code>mirror_and_weld</code></td><td><code>axis</code> x, y, z or several, e.g. <code>xz</code> (default x); <code>side</code> positive (default) or negative</td></tr><tr><td><code>mirror</code></td><td><code>axis</code> (default x); <code>pivot</code> origin (default) or center</td></tr><tr><td><code>weld_points</code></td><td><code>distance</code> in scene units (0: only exactly coincident points); <code>preview=true</code> only counts them</td></tr><tr><td><code>mesh_check</code></td><td>Lists the problems, e.g. <code>holes=2 flipped=14</code></td></tr><tr><td><code>mesh_fix</code></td><td><code>issue</code> non_manifold, holes, duplicate, degenerate, zero_area, flipped, isolated or all (all but holes)</td></tr><tr><td><code>export_lods</code></td><td><code>path</code> (base name), <code>levels</code> 1-8 including LOD0 (default 4), <code>ratio</code> 0.1-0.9 (default 0.5)</td></tr></tbody></table></div>
 <div class="code-block"><pre class="code"><code class="language-sh">sculptforge-cli -c &#x27;open path=scan.obj; remesh resolution=256; decimate triangles=200000; export_lods path=out/rock.glb levels=4 ratio=0.5&#x27;</code></pre><button class="copy" type="button" aria-label="Copy">Copy</button></div>
-<p>The command line accepts a wider remesh range (32-512) than the palette slider.</p>
 <h2 id="see-also">See also<a class="anchor" href="#see-also" aria-label="Link to this section">#</a></h2>
 <ul>
 <li>
@@ -264,7 +280,7 @@ Click <strong>Generate LOD chain</strong>.
   <footer class="footer">
     <div class="wrap footer-grid">
       <div>
-        <a class="brand" href="../index.html"><img class="brand-mark" src="../img/bust-mark-44.png" srcset="../img/bust-mark-88.png 2x, ../img/bust-mark-132.png 3x" width="32" height="32" alt=""><span>SculptForge</span></a>
+        <a class="brand" href="../index.html"><img class="brand-wordmark" src="../img/logo-wordmark-dark.svg" width="103" height="24" alt="SculptForge"><img class="brand-cube" src="../img/logo-cube.svg" width="30" height="32" alt="SculptForge"></a>
         <p class="fine">Copyright © 2026 The SculptForge contributors.<br>The SculptForge User Guide is part of
           SculptForge, licensed under the <a href="https://github.com/islandmed/SculptForge/blob/main/LICENSE">GNU GPL v3.0 or later</a>.</p>
       </div>
