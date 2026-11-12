@@ -38,6 +38,8 @@
     .stand-lead strong, .stand-text strong { display: block; color: var(--text); font-weight: 600; }
     .standout { padding: 64px 0 72px; background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .stand-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .stand-grid > li:empty { display: none; } /* a tile whose picture the deploy took down (media_takedown.py) */
+    .demo.clip:not(:has(video, img)) { display: none; } /* a clip the deploy took down (media_takedown.py) */
     .stand-tile { display: flex; flex-direction: column; height: 100%; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; color: var(--muted); }
     .stand-tile:hover, .stand-tile:focus-visible { border-color: var(--accent); text-decoration: none; }
     .stand-img { display: block; position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #14141a; border-bottom: 1px solid var(--border); }
@@ -438,7 +440,7 @@ rez-env sculptforge -- sculptforge troll.usda \
         <h2>See it in action</h2>
         <p class="section-lede">Real recordings of the app at real speed, with nothing edited in.</p>
 
-        <div class="demo">
+        <div class="demo clip">
           
           <div>
             <h3>UDIM tiles in any grid</h3>
@@ -447,7 +449,7 @@ rez-env sculptforge -- sculptforge troll.usda \
           </div>
         </div>
 
-        <div class="demo reverse">
+        <div class="demo clip reverse">
           
           <div>
             <h3>Move a feature on its own layer</h3>
@@ -456,7 +458,7 @@ rez-env sculptforge -- sculptforge troll.usda \
           </div>
         </div>
 
-        <div class="demo">
+        <div class="demo clip">
           
           <div>
             <h3>Vector stamps that turn</h3>
@@ -465,7 +467,7 @@ rez-env sculptforge -- sculptforge troll.usda \
           </div>
         </div>
 
-        <div class="demo reverse">
+        <div class="demo clip reverse">
           
           <div>
             <h3>The view keys you already know</h3>
