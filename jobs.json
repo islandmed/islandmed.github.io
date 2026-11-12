@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-11",
+"generated": "2026-11-12",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -38,6 +38,22 @@
 },
 "studios": 83,
 "roles": [
+{
+"id": "greenhouse:visualconcepts:7865962003",
+"title": "3D Artist",
+"studio": "Visual Concepts",
+"location": "Shanghai, China",
+"regions": [
+"Greater China"
+],
+"remote": false,
+"posted": "2026-11-11",
+"url": "https://job-boards.greenhouse.io/visualconcepts/jobs/7865962003",
+"sector": "games",
+"role": "generalist",
+"contract": false,
+"new": true
+},
 {
 "id": "teamtailor:fatshark:2fd6bd15-00c1-4c81-b185-2d62736c71d4",
 "title": "Level Artist",
@@ -151,22 +167,6 @@
 "new": false
 },
 {
-"id": "greenhouse:epicgames:6224464004",
-"title": "Senior Character Artist",
-"studio": "Epic Games",
-"location": "Multiple Locations",
-"regions": [
-"North America"
-],
-"remote": false,
-"posted": "2026-10-22",
-"url": "https://epicgames.com/careers/jobs/6224464004?gh_jid=6224464004",
-"sector": "games",
-"role": "character",
-"contract": false,
-"new": false
-},
-{
 "id": "greenhouse:epicgames:6224462004",
 "title": "Senior Character Artist",
 "studio": "Epic Games",
@@ -177,6 +177,22 @@
 "remote": false,
 "posted": "2026-10-22",
 "url": "https://epicgames.com/careers/jobs/6224462004?gh_jid=6224462004",
+"sector": "games",
+"role": "character",
+"contract": false,
+"new": false
+},
+{
+"id": "greenhouse:epicgames:6224464004",
+"title": "Senior Character Artist",
+"studio": "Epic Games",
+"location": "Multiple Locations",
+"regions": [
+"North America"
+],
+"remote": false,
+"posted": "2026-10-22",
+"url": "https://epicgames.com/careers/jobs/6224464004?gh_jid=6224464004",
 "sector": "games",
 "role": "character",
 "contract": false,
