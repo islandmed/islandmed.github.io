@@ -143,7 +143,7 @@ b.querySelector(".news-bar-x").onclick=function(){b.hidden=true;try{localStorage
           <li><a class="stand-tile" href="guide/blender.html"><span class="stand-img"><img src="guide/images/blender-menu.jpg" alt="" width="880" height="610" loading="lazy"></span><span class="stand-text"><strong>Blender round-trip</strong>One click sends objects to SculptForge and back. They update in place, with transform, materials and modifiers kept (Blender 4.2+).</span></a></li>
           <li><a class="stand-tile" href="guide/blender.html#splats-with-blender"><span class="stand-img"><img src="guide/images/splats.jpg" alt="" width="980" height="775" loading="lazy"></span><span class="stand-text"><strong>Gaussian splats, with Blender 5.3</strong>Send a splat from Blender 5.3, sculpt over it, and send the splats back to the same object.</span></a></li>
           <li><a class="stand-tile" href="guide/scan-to-sculptable.html"><span class="stand-img contain"><img src="guide/images/make-sculptable.jpg" alt="" width="1200" height="507" loading="lazy"></span><span class="stand-text"><strong>Capture to sculptable mesh</strong>One click turns a splat capture into clean quads with its colours.</span></a></li>
-          <li><a class="stand-tile" href="guide/retopology.html"><span class="stand-img"><img src="guide/images/qremesh.jpg" alt="" width="1100" height="660" loading="lazy"></span><span class="stand-text"><strong>Quad retopology and baking</strong>Quad Remesh with your own guide curves, then bake normal, displacement and occlusion maps.</span></a></li>
+          <li></li>
           <li><a class="stand-tile" href="guide/garments.html"><span class="stand-img"><img src="guide/images/garments.jpg" alt="" width="600" height="340" loading="lazy"></span><span class="stand-text"><strong>Garments and cloth</strong>Real-size sewing patterns from 8 templates, draped with a cloth brush.</span></a></li>
           <li><a class="stand-tile" href="guide/brush-lab.html"><span class="stand-img contain"><img src="guide/images/brush-lab.jpg" alt="" width="457" height="230" loading="lazy"></span><span class="stand-text"><strong>Optional AI brushes</strong>Describe a brush in words and Brush Lab makes it. Your own provider, no account, and one switch turns AI off.</span></a></li>
         </ul>
@@ -440,10 +440,7 @@ rez-env sculptforge -- sculptforge troll.usda \
         <p class="section-lede">Real recordings of the app at real speed, with nothing edited in.</p>
 
         <div class="demo">
-          <video aria-label="Packing UVs into a 4 by 3 grid of UDIM tiles, then a 10 by 2 grid" poster="media/poster-udim.jpg?v=1" muted loop playsinline preload="none" data-inview tabindex="0">
-            <source src="media/udim-4k.mp4?v=1" type="video/mp4" media="(min-width: 1600px) and (min-resolution: 1.5dppx), (min-width: 2600px)">
-            <source src="media/udim.mp4?v=1" type="video/mp4">
-          </video>
+          
           <div>
             <h3>UDIM tiles in any grid</h3>
             <p>UV Editor &gt; Pack lays the islands over Columns x Rows tiles: four wide and three high, or ten by
@@ -452,10 +449,7 @@ rez-env sculptforge -- sculptforge troll.usda \
         </div>
 
         <div class="demo reverse">
-          <video aria-label="Moving a masked nose forward on its own sculpt layer, then dialling the layer's weight" poster="media/poster-layer-weight.jpg?v=1" muted loop playsinline preload="none" data-inview tabindex="0">
-            <source src="media/layer-weight-4k.mp4?v=1" type="video/mp4" media="(min-width: 1600px) and (min-resolution: 1.5dppx), (min-width: 2600px)">
-            <source src="media/layer-weight.mp4?v=1" type="video/mp4">
-          </video>
+          
           <div>
             <h3>Move a feature on its own layer</h3>
             <p>Mask the nose, pull it forward with the Transform gizmo, and the move goes into the active sculpt
@@ -464,10 +458,7 @@ rez-env sculptforge -- sculptforge troll.usda \
         </div>
 
         <div class="demo">
-          <video aria-label="Vector displacement horns stamped in different directions with angle jitter" poster="media/poster-vdm.jpg?v=1" muted loop playsinline preload="none" data-inview tabindex="0">
-            <source src="media/vdm-4k.mp4?v=1" type="video/mp4" media="(min-width: 1600px) and (min-resolution: 1.5dppx), (min-width: 2600px)">
-            <source src="media/vdm.mp4?v=1" type="video/mp4">
-          </video>
+          
           <div>
             <h3>Vector stamps that turn</h3>
             <p>Each vector displacement stamp follows the direction you drag it. Add Angle jitter, and every horn,
@@ -476,10 +467,7 @@ rez-env sculptforge -- sculptforge troll.usda \
         </div>
 
         <div class="demo reverse">
-          <video aria-label="Rolling, resetting, zooming toward the pointer and framing the view with the industry-standard keys" poster="media/poster-view-keys.jpg?v=1" muted loop playsinline preload="none" data-inview tabindex="0">
-            <source src="media/view-keys-4k.mp4?v=1" type="video/mp4" media="(min-width: 1600px) and (min-resolution: 1.5dppx), (min-width: 2600px)">
-            <source src="media/view-keys.mp4?v=1" type="video/mp4">
-          </video>
+          
           <div>
             <h3>The view keys you already know</h3>
             <p>Pick the industry-standard input style: Alt+Ctrl and a drag rolls the view, Alt+H resets it, Alt+F
