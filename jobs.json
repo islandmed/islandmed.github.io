@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-12",
+"generated": "2026-11-13",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -52,7 +52,7 @@
 "sector": "games",
 "role": "generalist",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "teamtailor:fatshark:2fd6bd15-00c1-4c81-b185-2d62736c71d4",
@@ -279,20 +279,20 @@
 "new": false
 },
 {
-"id": "ashby:voodoo:45169264-5113-4ec8-85df-435e845b8edd",
-"title": "3D Artist - Puzzle Games",
-"studio": "Voodoo",
-"location": "Beijing",
+"id": "greenhouse:riotgames:8187663",
+"title": "Principal 3D Environment Artist - Unpublished R&D Product",
+"studio": "Riot Games",
+"location": "Los Angeles, USA",
 "regions": [
-"Greater China"
+"North America"
 ],
 "remote": false,
 "posted": "2026-10-12",
-"url": "https://jobs.ashbyhq.com/voodoo/45169264-5113-4ec8-85df-435e845b8edd",
+"url": "https://www.riotgames.com/en/work-with-us/job/8187663?gh_jid=8187663",
 "sector": "games",
-"role": "generalist",
+"role": "environment",
 "contract": false,
-"new": false
+"new": true
 },
 {
 "id": "teamtailor:embarkstudios:00381e92-2f07-4dba-af30-f1f31dae1811",
@@ -419,22 +419,6 @@
 "url": "https://jobs.lever.co/jamcity/5162e400-e24f-47f1-9a64-51548812b74a",
 "sector": "games",
 "role": "generalist",
-"contract": false,
-"new": false
-},
-{
-"id": "greenhouse:2k:7812709003",
-"title": "Lead Level Artist",
-"studio": "2K",
-"location": "Montréal, Quebec, Canada",
-"regions": [
-"North America"
-],
-"remote": false,
-"posted": "2026-08-14",
-"url": "https://job-boards.greenhouse.io/2k/jobs/7812709003",
-"sector": "games",
-"role": "environment",
 "contract": false,
 "new": false
 }
