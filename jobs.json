@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-16",
+"generated": "2026-11-17",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -38,6 +38,22 @@
 },
 "studios": 83,
 "roles": [
+{
+"id": "greenhouse:roblox:8356378",
+"title": "3D Visual Artist (Short Term)",
+"studio": "Roblox",
+"location": "San Mateo, CA, United States",
+"regions": [
+"North America"
+],
+"remote": false,
+"posted": "2026-11-16",
+"url": "https://careers.roblox.com/jobs/8356378?gh_jid=8356378",
+"sector": "games",
+"role": "generalist",
+"contract": false,
+"new": true
+},
 {
 "id": "greenhouse:visualconcepts:7865962003",
 "title": "3D Artist",
@@ -167,22 +183,6 @@
 "new": false
 },
 {
-"id": "greenhouse:epicgames:6224464004",
-"title": "Senior Character Artist",
-"studio": "Epic Games",
-"location": "Multiple Locations",
-"regions": [
-"North America"
-],
-"remote": false,
-"posted": "2026-10-22",
-"url": "https://epicgames.com/careers/jobs/6224464004?gh_jid=6224464004",
-"sector": "games",
-"role": "character",
-"contract": false,
-"new": false
-},
-{
 "id": "greenhouse:epicgames:6224462004",
 "title": "Senior Character Artist",
 "studio": "Epic Games",
@@ -193,6 +193,22 @@
 "remote": false,
 "posted": "2026-10-22",
 "url": "https://epicgames.com/careers/jobs/6224462004?gh_jid=6224462004",
+"sector": "games",
+"role": "character",
+"contract": false,
+"new": false
+},
+{
+"id": "greenhouse:epicgames:6224464004",
+"title": "Senior Character Artist",
+"studio": "Epic Games",
+"location": "Multiple Locations",
+"regions": [
+"North America"
+],
+"remote": false,
+"posted": "2026-10-22",
+"url": "https://epicgames.com/careers/jobs/6224464004?gh_jid=6224464004",
 "sector": "games",
 "role": "character",
 "contract": false,
@@ -339,22 +355,6 @@
 "url": "https://careers.embark-studios.com/jobs/8476314-character-artist",
 "sector": "games",
 "role": "character",
-"contract": false,
-"new": false
-},
-{
-"id": "greenhouse:tripledotstudios:4973861101",
-"title": "3D Artist",
-"studio": "Tripledot Studios",
-"location": "Jakarta",
-"regions": [
-"Southeast Asia"
-],
-"remote": false,
-"posted": "2026-09-15",
-"url": "https://job-boards.eu.greenhouse.io/tripledotstudios/jobs/4973861101",
-"sector": "games",
-"role": "generalist",
 "contract": false,
 "new": false
 },
