@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-18",
+"generated": "2026-11-19",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -39,6 +39,22 @@
 "studios": 83,
 "roles": [
 {
+"id": "ashby:arenanet:fd9ee36e-6ec8-43bc-b6cb-3cfc4f7ee8ba",
+"title": "Senior Environment Artist (Contract)",
+"studio": "ArenaNet",
+"location": "Remote",
+"regions": [
+"North America"
+],
+"remote": true,
+"posted": "2026-11-18",
+"url": "https://jobs.ashbyhq.com/arenanet/fd9ee36e-6ec8-43bc-b6cb-3cfc4f7ee8ba",
+"sector": "games",
+"role": "environment",
+"contract": true,
+"new": true
+},
+{
 "id": "greenhouse:riotgames:8368573",
 "title": "Senior 3D Environment Artist - VALORANT, Maps",
 "studio": "Riot Games",
@@ -52,7 +68,7 @@
 "sector": "games",
 "role": "environment",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:riotgames:8368570",
@@ -68,7 +84,7 @@
 "sector": "games",
 "role": "environment",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:roblox:8356378",
