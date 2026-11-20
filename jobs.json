@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-19",
+"generated": "2026-11-20",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -52,7 +52,7 @@
 "sector": "games",
 "role": "environment",
 "contract": true,
-"new": true
+"new": false
 },
 {
 "id": "greenhouse:riotgames:8368573",
