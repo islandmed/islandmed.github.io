@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-24",
+"generated": "2026-11-25",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -38,6 +38,38 @@
 },
 "studios": 83,
 "roles": [
+{
+"id": "teamtailor:sharkmob:1ecf6c89-d6f6-41b8-b889-5c0c1f95c8d8",
+"title": "Senior Environment Artist",
+"studio": "Sharkmob",
+"location": "Malmö, Sweden",
+"regions": [
+"Europe"
+],
+"remote": false,
+"posted": "2026-11-23",
+"url": "https://career.sharkmob.com/jobs/8779857-senior-environment-artist",
+"sector": "games",
+"role": "environment",
+"contract": false,
+"new": true
+},
+{
+"id": "ashby:voodoo:87ee72b6-7d8b-472b-90e9-30cdb3d131b2",
+"title": "3D Game Artist - Puzzle Games",
+"studio": "Voodoo",
+"location": "Istanbul",
+"regions": [
+"Middle East/Africa"
+],
+"remote": false,
+"posted": "2026-11-19",
+"url": "https://jobs.ashbyhq.com/voodoo/87ee72b6-7d8b-472b-90e9-30cdb3d131b2",
+"sector": "games",
+"role": "generalist",
+"contract": false,
+"new": true
+},
 {
 "id": "ashby:arenanet:fd9ee36e-6ec8-43bc-b6cb-3cfc4f7ee8ba",
 "title": "Senior Environment Artist (Contract)",
@@ -183,22 +215,6 @@
 "new": false
 },
 {
-"id": "greenhouse:epicgames:6224462004",
-"title": "Senior Character Artist",
-"studio": "Epic Games",
-"location": "Cary, North Carolina, United States",
-"regions": [
-"North America"
-],
-"remote": false,
-"posted": "2026-10-22",
-"url": "https://epicgames.com/careers/jobs/6224462004?gh_jid=6224462004",
-"sector": "games",
-"role": "character",
-"contract": false,
-"new": false
-},
-{
 "id": "greenhouse:epicgames:6224464004",
 "title": "Senior Character Artist",
 "studio": "Epic Games",
@@ -209,6 +225,22 @@
 "remote": false,
 "posted": "2026-10-22",
 "url": "https://epicgames.com/careers/jobs/6224464004?gh_jid=6224464004",
+"sector": "games",
+"role": "character",
+"contract": false,
+"new": false
+},
+{
+"id": "greenhouse:epicgames:6224462004",
+"title": "Senior Character Artist",
+"studio": "Epic Games",
+"location": "Cary, North Carolina, United States",
+"regions": [
+"North America"
+],
+"remote": false,
+"posted": "2026-10-22",
+"url": "https://epicgames.com/careers/jobs/6224462004?gh_jid=6224462004",
 "sector": "games",
 "role": "character",
 "contract": false,
@@ -312,7 +344,7 @@
 },
 {
 "id": "ashby:voodoo:f8231db6-ec7c-47ad-86ae-7ba48b01f94e",
-"title": "3D Game Artist - Sand Loop",
+"title": "3D Game Artist - Core - Puzzle Unit",
 "studio": "Voodoo",
 "location": "Paris",
 "regions": [
