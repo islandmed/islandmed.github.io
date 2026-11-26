@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-25",
+"generated": "2026-11-26",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -52,7 +52,7 @@
 "sector": "games",
 "role": "environment",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "ashby:voodoo:87ee72b6-7d8b-472b-90e9-30cdb3d131b2",
@@ -68,7 +68,7 @@
 "sector": "games",
 "role": "generalist",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "ashby:arenanet:fd9ee36e-6ec8-43bc-b6cb-3cfc4f7ee8ba",
@@ -215,22 +215,6 @@
 "new": false
 },
 {
-"id": "greenhouse:epicgames:6224464004",
-"title": "Senior Character Artist",
-"studio": "Epic Games",
-"location": "Multiple Locations",
-"regions": [
-"North America"
-],
-"remote": false,
-"posted": "2026-10-22",
-"url": "https://epicgames.com/careers/jobs/6224464004?gh_jid=6224464004",
-"sector": "games",
-"role": "character",
-"contract": false,
-"new": false
-},
-{
 "id": "greenhouse:epicgames:6224462004",
 "title": "Senior Character Artist",
 "studio": "Epic Games",
@@ -241,6 +225,22 @@
 "remote": false,
 "posted": "2026-10-22",
 "url": "https://epicgames.com/careers/jobs/6224462004?gh_jid=6224462004",
+"sector": "games",
+"role": "character",
+"contract": false,
+"new": false
+},
+{
+"id": "greenhouse:epicgames:6224464004",
+"title": "Senior Character Artist",
+"studio": "Epic Games",
+"location": "Multiple Locations",
+"regions": [
+"North America"
+],
+"remote": false,
+"posted": "2026-10-22",
+"url": "https://epicgames.com/careers/jobs/6224464004?gh_jid=6224464004",
 "sector": "games",
 "role": "character",
 "contract": false,
