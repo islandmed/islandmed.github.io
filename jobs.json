@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-26",
+"generated": "2026-11-27",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -38,6 +38,38 @@
 },
 "studios": 83,
 "roles": [
+{
+"id": "lever:neowiz:905b13a3-4d12-43ad-833f-3cd641be2968",
+"title": "[NOUGH Studio] P의 거짓 차기작 3D 캐릭터 모델러",
+"studio": "NEOWIZ",
+"location": "",
+"regions": [
+"Korea"
+],
+"remote": false,
+"posted": "2026-11-27",
+"url": "https://jobs.lever.co/neowiz/905b13a3-4d12-43ad-833f-3cd641be2968",
+"sector": "games",
+"role": "character",
+"contract": false,
+"new": true
+},
+{
+"id": "ashby:voodoo:ca5d376f-2d8f-46b3-bf3d-1cfe1945dc68",
+"title": "3D美术设计师 - Puzzle 游戏 - 中国",
+"studio": "Voodoo",
+"location": "Beijing; Chengdu",
+"regions": [
+"Greater China"
+],
+"remote": false,
+"posted": "2026-11-24",
+"url": "https://jobs.ashbyhq.com/voodoo/ca5d376f-2d8f-46b3-bf3d-1cfe1945dc68",
+"sector": "games",
+"role": "generalist",
+"contract": false,
+"new": true
+},
 {
 "id": "teamtailor:sharkmob:1ecf6c89-d6f6-41b8-b889-5c0c1f95c8d8",
 "title": "Senior Environment Artist",
@@ -355,22 +387,6 @@
 "url": "https://jobs.ashbyhq.com/voodoo/f8231db6-ec7c-47ad-86ae-7ba48b01f94e",
 "sector": "games",
 "role": "generalist",
-"contract": false,
-"new": false
-},
-{
-"id": "teamtailor:embarkstudios:97817fba-505e-487e-8fb5-cccf8de23aa7",
-"title": "Character Artist",
-"studio": "Embark Studios",
-"location": "Stockholm, Sweden",
-"regions": [
-"Europe"
-],
-"remote": false,
-"posted": "2026-09-30",
-"url": "https://careers.embark-studios.com/jobs/8476314-character-artist",
-"sector": "games",
-"role": "character",
 "contract": false,
 "new": false
 },
