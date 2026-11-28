@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-27",
+"generated": "2026-11-28",
 "max_age_days": 90,
 "regions": [
 "North America",
@@ -52,7 +52,7 @@
 "sector": "games",
 "role": "character",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "ashby:voodoo:ca5d376f-2d8f-46b3-bf3d-1cfe1945dc68",
@@ -68,7 +68,7 @@
 "sector": "games",
 "role": "generalist",
 "contract": false,
-"new": true
+"new": false
 },
 {
 "id": "teamtailor:sharkmob:1ecf6c89-d6f6-41b8-b889-5c0c1f95c8d8",
